@@ -40,6 +40,8 @@ Other scripts:
 ```bash
 npm test
 npm run build
+npm run format
+npm run format:check
 ```
 
 ### Design decisions
@@ -69,7 +71,7 @@ src/app/
 
 ### Testing
 
-Unit test files live next to the code they cover (`*.spec.ts`). Run with `npm test`.
+Unit test files live next to the code they cover (`*.spec.ts`). Run the full suite with `npm test` and check formatting with `npm run format:check`.
 
 ### Notes
 
