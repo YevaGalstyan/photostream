@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { TestBed } from "@angular/core/testing";
 import { By } from "@angular/platform-browser";
-import { InifiteScroll } from "./infinite-scroll";
+import { InfiniteScroll } from "./infinite-scroll";
 
 class MockIntersectionObserver {
     static latest?: MockIntersectionObserver;
@@ -34,7 +34,7 @@ class MockIntersectionObserver {
 
 @Component({
     standalone: true,
-    imports: [InifiteScroll],
+    imports: [InfiniteScroll],
     template: '<div appInfiniteScroll [rootMargin]="rootMargin" (scrolled)="onScrolled()"></div>',
 })
 class TestHost {
@@ -46,7 +46,7 @@ class TestHost {
     }
 }
 
-describe("InifiteScroll", () => {
+describe("InfiniteScroll", () => {
     const originalIntersectionObserver = globalThis.IntersectionObserver;
 
     beforeEach(() => {
@@ -76,8 +76,8 @@ describe("InifiteScroll", () => {
     it("disconnects the observer when destroyed", () => {
         const fixture = TestBed.createComponent(TestHost);
         fixture.detectChanges();
-        const observer = fixture.debugElement.query(By.directive(InifiteScroll))
-            .injector.get(InifiteScroll);
+        const observer = fixture.debugElement.query(By.directive(InfiniteScroll))
+            .injector.get(InfiniteScroll);
 
         fixture.destroy();
 

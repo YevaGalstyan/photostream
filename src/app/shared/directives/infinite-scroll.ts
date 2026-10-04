@@ -1,7 +1,7 @@
 import { Directive, ElementRef, inject, input, OnDestroy, OnInit, output } from "@angular/core";
 
 @Directive({ selector: '[appInfiniteScroll]' })
-export class InifiteScroll implements OnInit, OnDestroy {
+export class InfiniteScroll implements OnInit, OnDestroy {
     readonly scrolled = output<void>();
     readonly rootMargin = input('200px');
 

@@ -28,7 +28,7 @@ export class PhotoDetailPage {
     this.favorites.remove(photo.id);
   }
 
-   protected close(): void {
+    protected close(): void {
     this.router.navigateByUrl('/favorites');
   }
 }

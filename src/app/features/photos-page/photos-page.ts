@@ -2,7 +2,7 @@ import { Component, inject, signal, WritableSignal } from "@angular/core";
 import { DEFAULT_PAGE_SIZE, PhotoService } from "../../core/services/photo.service";
 import { Photo } from "../../core/models/photo.model";
 import { MatProgressSpinner } from "@angular/material/progress-spinner";
-import { InifiteScroll } from "../../shared/directives/infinite-scroll";
+import { InfiniteScroll } from "../../shared/directives/infinite-scroll";
 import { SearchService } from "../../core/services/search.service";
 import { debounceTime, Subscription } from "rxjs";
 import { takeUntilDestroyed, toObservable } from '@angular/core/rxjs-interop';
@@ -13,7 +13,7 @@ import { PhotoGrid } from "../../shared/components/photo-grid/photo-grid";
 
 @Component({
     selector: 'app-photos-page',
-    imports: [MatProgressSpinner, InifiteScroll, SearchBar, PhotoGrid],
+    imports: [MatProgressSpinner, InfiniteScroll, SearchBar, PhotoGrid],
     templateUrl: './photos-page.html',
     styleUrl: './photos-page.scss',
 })

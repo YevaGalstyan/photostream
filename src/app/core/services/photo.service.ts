@@ -11,7 +11,6 @@ const MAX_DELAY_MS = 300;
 export const SEARCH_CATALOGUE_SIZE = 500;
 
 export function matchesQuery(photo: Photo, query: string): boolean {
-    console.log(query);
     const terms = query.toLowerCase().split(/\s+/).filter(Boolean);
     const title = photo.title.toLowerCase();
     return terms.every(
