@@ -29,10 +29,10 @@
         [class.active]="favorite()"
         [class.reveal]="!favorite()"
         [attr.aria-pressed]="favorite()"
-        [attr.aria-label]="favorite() ? 'Remove from favorites' : 'Add to favorites'"
+        [attr.aria-label]="Remove from favorites"
         (click)="onFavorite($event)"
       >
-        <mat-icon>{{ favorite() ? 'favorite' : 'favorite_border' }}</mat-icon>
+        <mat-icon>favorite</mat-icon>
       </button>
     </div>
     <span class="title reveal">{{ photo().title }}</span>
