@@ -12,4 +12,11 @@ export const routes: Routes = [
         loadComponent: () =>
             import('./features/favourites-page/favorites-page').then((m) => m.FavoritesPage),
     },
+    {
+        path: 'photos/:id',
+        loadComponent: () =>
+            import('./features/photo-detail-page/photo-detail-page').then(
+                (m) => m.PhotoDetailPage,
+            ),
+    },
 ];
