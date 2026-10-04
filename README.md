@@ -2,6 +2,8 @@
 
 This application was created for a test step for recruitment. Photostream is a photo library built with Angular. In photostream the user can browse an endless stream of random photos, search and filter by title or tag. Additionally, the user can save the photos they like to Favorites. To view the photo closer, the user can open any favorite photo in a full-screen view.
 
+[Live demo](https://photostream-yeva.vercel.app/)
+
 ![Photos page](docs/screenshots/full-screen-screenshot.png)
 
 ![Photo detail page](docs/screenshots/home-screenshot.png)
