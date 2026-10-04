@@ -1,12 +1,16 @@
+<app-search-bar />
+
 <div class="grid">
     @for (photo of photos(); track photo.id) {
     <app-photo-card [photo]="photo" [favorite]="false" (photoClick)="onPhotoClick(photo)"
-        (favoriteToggle)="onPhotoClick(photo)" />
+        (favoriteToggle)="onPhotoClick(photo)" (tagClick)="search.toggleTag($event)" />
     }
 </div>
 
 @if (loading()) {
 <div class="loader"><mat-spinner diameter="40" /></div>
-} @else {
+} @else if (done() && photos().length === 0) {
+<p class="empty">No photos match your filters.</p>
+} @else if (!done()) {
 <div appInfiniteScroll (scrolled)="loadMore()"></div>
 }

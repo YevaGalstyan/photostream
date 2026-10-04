@@ -73,8 +73,7 @@ img {
     transition: opacity 0.2s ease;
 }
 
-.card:hover .reveal,
-.card:focus-within .reveal {
+.card:hover .reveal{
     opacity: 1;
 }
 

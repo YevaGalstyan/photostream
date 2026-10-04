@@ -1,0 +1,25 @@
+:host { display: block; }
+
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 16px 0;
+}
+
+.row { display: flex; align-items: center; gap: 8px; }
+.field { flex: 1; min-width: 0; }
+
+.tags-scroll {
+  overflow-x: auto; 
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+
+  mat-chip-listbox { width: max-content; }
+}
+
+@media (max-width: 600px) {
+  .unfilter-label { display: none; }
+}

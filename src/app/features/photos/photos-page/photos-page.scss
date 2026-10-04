@@ -1,19 +1,19 @@
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); // phones: 2 columns
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   padding: 16px;
   max-width: 1200px;
   margin: 0 auto;
 
   @media (min-width: 600px) {
-    grid-template-columns: repeat(3, 1fr); // tablets: 3
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 24px;
   }
 
   @media (min-width: 960px) {
-    grid-template-columns: repeat(4, 1fr); // desktop: 4
+    grid-template-columns: repeat(4, 1fr);
     gap: 24px;
   }
 }
@@ -41,4 +41,10 @@
   display: flex;
   justify-content: center;
   padding: 24px;
+}
+
+.empty {
+  text-align: center;
+  padding: 48px 16px;
+  color: var(--mat-sys-on-surface-variant);
 }
