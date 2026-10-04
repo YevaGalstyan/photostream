@@ -1,4 +1,4 @@
-// Seeded random number generator 
+// Seeded random number generator
 export function mulberry32(seed: number): () => number {
   let a = seed >>> 0;
   return () => {
@@ -11,9 +11,26 @@ export function mulberry32(seed: number): () => number {
 }
 
 export const TAGS = [
-  'nature', 'city', 'architecture', 'travel', 'food', 'abstract', 'portrait',
-  'minimal', 'night', 'sunset', 'ocean', 'forest', 'mountain', 'street',
-  'vintage', 'macro', 'interior', 'sky', 'flowers', 'texture',
+  'nature',
+  'city',
+  'architecture',
+  'travel',
+  'food',
+  'abstract',
+  'portrait',
+  'minimal',
+  'night',
+  'sunset',
+  'ocean',
+  'forest',
+  'mountain',
+  'street',
+  'vintage',
+  'macro',
+  'interior',
+  'sky',
+  'flowers',
+  'texture',
 ];
 
 /** same id always gets the same distinct tags. */

@@ -1,4 +1,4 @@
-# Photostream 
+# Photostream
 
 This application was created for a test step for recruitment. Photostream is a photo library built with Angular. In photostream the user can browse an endless stream of random photos, search and filter by title or tag. Additionally, the user can save the photos they like to Favorites. To view the photo closer, the user can open any favorite photo in a full-screen view.
 
@@ -7,6 +7,7 @@ This application was created for a test step for recruitment. Photostream is a p
 ![Photo detail page](docs/screenshots/home-screenshot.png)
 
 ### Features
+
 - **Infinite photo stream** at home page (`/`). Photos are loaded in batches as the user scrolls, with a loading spinner
 - The user can **Save to Favorites** by clicking a photo (or the heart icon). Favorites persist across page refreshes (in `localStorage`)
 - Separate **Favorites page** (`/favorites`) that lists every saved photo
@@ -15,7 +16,8 @@ This application was created for a test step for recruitment. Photostream is a p
 - **Download** a photo from its card
 - Responsive layout (2, 3, or 4 columns)
 
-### Tech stack 
+### Tech stack
+
 - Angular v22
 - Angular Router v22
 - Angular Material v22
@@ -25,21 +27,23 @@ This application was created for a test step for recruitment. Photostream is a p
 - Images from Picsum Photos
 
 ### Getting started
+
 Requires a current Node.js LTS release.
 
 ```bash
 npm install
-npm start 
+npm start
 ```
 
 Other scripts:
 
 ```bash
-npm test  
+npm test
 npm run build
 ```
 
 ### Design decisions
+
 - `PhotoService` returns an Observable with a random 200-300ms delay, so the UI handles loading states as it would with a real backend.
 - Image URLs use Picsum's seed feature. Same id always shows the same image.
 - `FavoritesService` stores whole photos. This means that the Favorites and the detail pages do not need a separate API call.
@@ -47,26 +51,29 @@ npm run build
 - Infinite scroll is a custom directive built on `IntersectionObserver`.
 
 ### Project structure
-`````
+
+```
 src/app/
-├── core/                  
+├── core/
 │   ├── models/            # Photo interface
 │   ├── services/          # PhotoService, FavoritesService, StorageService, SearchService
 │   └── utils/             # title and tag generators, search matching, download helper
-├── shared/                
+├── shared/
 │   ├── components/        # header, photo-card, photo-grid, search-bar
 │   └── directives/        # infinite-scroll
 └── features/              # one folder per routed page
     ├── photos-page/
     ├── favorites-page/
     └── photo-detail-page/
-`````
+```
 
 ### Testing
+
 Unit test files live next to the code they cover (`*.spec.ts`). Run with `npm test`.
 
 ### Notes
+
 - There is no backend and no login.
-- Favorites are stored in `localStorage`, so they belong to one browser on one device. 
+- Favorites are stored in `localStorage`, so they belong to one browser on one device.
 - Photo titles and tags are generated from the photo id, they don't necessarily describe the image.
 - Search covers the first 500 photos

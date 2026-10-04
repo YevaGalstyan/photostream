@@ -1,6 +1,11 @@
 <div class="grid">
-    @for (photo of photos(); track photo.id) {
-    <app-photo-card [photo]="photo" [favorite]="favoriteIds().has(photo.id)" (photoClick)="photoClick.emit($event)"
-        (favoriteToggle)="favoriteToggle.emit($event)" (tagClick)="tagClick.emit($event)" />
-    }
+  @for (photo of photos(); track photo.id) {
+    <app-photo-card
+      [photo]="photo"
+      [favorite]="favoriteIds().has(photo.id)"
+      (photoClick)="photoClick.emit($event)"
+      (favoriteToggle)="favoriteToggle.emit($event)"
+      (tagClick)="tagClick.emit($event)"
+    />
+  }
 </div>

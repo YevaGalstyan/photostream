@@ -1,5 +1,5 @@
-import { Photo } from "../models/photo.model";
-import { matchesQuery } from "../services/photo.service";
+import { Photo } from '../models/photo.model';
+import { matchesQuery } from '../services/photo.service';
 
 export interface SearchCriteria {
   query: string;

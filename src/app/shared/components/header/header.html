@@ -1,17 +1,22 @@
 <mat-toolbar class="header">
-    <a class="brand" routerLink="/" aria-label="Photostream home">
-        <img class="logo" src="logo.png" alt="" />
-    </a>
+  <a class="brand" routerLink="/" aria-label="Photostream home">
+    <img class="logo" src="logo.png" alt="" />
+  </a>
 
-    <nav class="nav" aria-label="Main">
-        <a mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-            ariaCurrentWhenActive="page">
-            <mat-icon>photo_library</mat-icon>
-            <span class="label">Photos</span>
-        </a>
-        <a mat-button routerLink="/favorites" routerLinkActive="active" ariaCurrentWhenActive="page">
-            <mat-icon>favorite</mat-icon>
-            <span class="label">Favorites</span>
-        </a>
-    </nav>
+  <nav class="nav" aria-label="Main">
+    <a
+      mat-button
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      ariaCurrentWhenActive="page"
+    >
+      <mat-icon>photo_library</mat-icon>
+      <span class="label">Photos</span>
+    </a>
+    <a mat-button routerLink="/favorites" routerLinkActive="active" ariaCurrentWhenActive="page">
+      <mat-icon>favorite</mat-icon>
+      <span class="label">Favorites</span>
+    </a>
+  </nav>
 </mat-toolbar>

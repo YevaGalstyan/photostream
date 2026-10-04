@@ -1,14 +1,19 @@
 <app-search-bar />
 
 @if (favorites.favorites().length === 0) {
-<div class="empty">
+  <div class="empty">
     <mat-icon>favorite_border</mat-icon>
     <p>No favorites yet. Click a photo to save it.</p>
     <a mat-flat-button routerLink="/">Browse photos</a>
-</div>
+  </div>
 } @else if (visible().length === 0) {
-<p class="empty">No favorites match your filters.</p>
+  <p class="empty">No favorites match your filters.</p>
 } @else {
-<app-photo-grid [photos]="visible()" [favoriteIds]="favorites.ids()" (photoClick)="open($event)"
-    (favoriteToggle)="favorites.toggle($event)" (tagClick)="search.toggleTag($event)" />
+  <app-photo-grid
+    [photos]="visible()"
+    [favoriteIds]="favorites.ids()"
+    (photoClick)="open($event)"
+    (favoriteToggle)="favorites.toggle($event)"
+    (tagClick)="search.toggleTag($event)"
+  />
 }

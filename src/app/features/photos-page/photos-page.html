@@ -1,12 +1,17 @@
 <app-search-bar />
 
-<app-photo-grid [photos]="photos()" [favoriteIds]="favorites.ids()" (photoClick)="favorites.add($event)"
-    (favoriteToggle)="favorites.toggle($event)" (tagClick)="search.toggleTag($event)" />
+<app-photo-grid
+  [photos]="photos()"
+  [favoriteIds]="favorites.ids()"
+  (photoClick)="favorites.add($event)"
+  (favoriteToggle)="favorites.toggle($event)"
+  (tagClick)="search.toggleTag($event)"
+/>
 
 @if (loading()) {
-<div class="loader"><mat-spinner diameter="40" /></div>
+  <div class="loader"><mat-spinner diameter="40" /></div>
 } @else if (done() && photos().length === 0) {
-<p class="empty">No photos match your filters.</p>
+  <p class="empty">No photos match your filters.</p>
 } @else if (!done()) {
-<div appInfiniteScroll (scrolled)="loadMore()"></div>
+  <div appInfiniteScroll (scrolled)="loadMore()"></div>
 }

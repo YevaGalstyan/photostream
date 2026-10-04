@@ -1,23 +1,23 @@
 @if (photo(); as photo) {
-<section class="viewer">
+  <section class="viewer">
     <button mat-icon-button type="button" class="close" aria-label="Close photo" (click)="close()">
-        <mat-icon>close</mat-icon>
+      <mat-icon>close</mat-icon>
     </button>
     <img class="photo" [src]="photo.fullUrl" [alt]="photo.title" />
 
     <div class="bar">
-        <div class="info">
-            <h1 class="title">{{ photo.title }}</h1>
-            <p class="tags">
-                @for (tag of photo.tags; track tag) {
-                <span>#{{ tag }} </span>
-                }
-            </p>
-        </div>
-        <button mat-flat-button type="button" (click)="remove(photo)">
-            <mat-icon>heart_broken</mat-icon>
-            Remove from favorites
-        </button>
+      <div class="info">
+        <h1 class="title">{{ photo.title }}</h1>
+        <p class="tags">
+          @for (tag of photo.tags; track tag) {
+            <span>#{{ tag }} </span>
+          }
+        </p>
+      </div>
+      <button mat-flat-button type="button" (click)="remove(photo)">
+        <mat-icon>heart_broken</mat-icon>
+        Remove from favorites
+      </button>
     </div>
-</section>
+  </section>
 }

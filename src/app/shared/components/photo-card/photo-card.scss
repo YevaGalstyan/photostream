@@ -1,84 +1,86 @@
 :host {
-    display: block;
+  display: block;
 }
 
 .card {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    border-radius: 16px;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 16px;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
 
-    &:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-    }
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  }
 
-    &:focus-visible {
-        outline: 3px solid var(--mat-sys-primary);
-        outline-offset: 2px;
-    }
+  &:focus-visible {
+    outline: 3px solid var(--mat-sys-primary);
+    outline-offset: 2px;
+  }
 }
 
 img {
-    display: block;
-    width: 100%;
-    aspect-ratio: 2 / 3;
-    object-fit: cover;
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
 }
 
 .gradient {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, .45), transparent 40%, rgba(0, 0, 0, .6));
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), transparent 40%, rgba(0, 0, 0, 0.6));
 }
 
 .overlay {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 8px 12px 12px;
-    color: #fff;
-    pointer-events: none;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px 12px 12px;
+  color: #fff;
+  pointer-events: none;
 
-    button {
-        pointer-events: auto;
-        color: #fff;
-    }
+  button {
+    pointer-events: auto;
+    color: #fff;
+  }
 }
 
 .top {
-    display: flex;
-    justify-content: flex-end;
-    gap: 4px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 4px;
 }
 
 .title {
-    font-weight: 500;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 .heart.active {
-    color: #ff5541;
+  color: #ff5541;
 }
 
 .reveal {
-    opacity: 0;
-    transition: opacity 0.2s ease;
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 
-.card:hover .reveal{
-    opacity: 1;
+.card:hover .reveal {
+  opacity: 1;
 }
 
 @media (hover: none) {
-    .reveal {
-        opacity: 1;
-    }
+  .reveal {
+    opacity: 1;
+  }
 }
