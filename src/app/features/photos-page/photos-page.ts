@@ -1,25 +1,26 @@
 import { Component, inject, signal, WritableSignal } from "@angular/core";
-import { DEFAULT_PAGE_SIZE, PhotoService } from "../../../core/services/photo.service";
-import { Photo } from "../../../core/models/photo.model";
+import { DEFAULT_PAGE_SIZE, PhotoService } from "../../core/services/photo.service";
+import { Photo } from "../../core/models/photo.model";
 import { MatProgressSpinner } from "@angular/material/progress-spinner";
-import { InifiteScroll } from "../../../shared/directives/infinite-scroll";
-import { MatCard, MatCardContent } from "@angular/material/card";
-import { PhotoCard } from "../../../shared/components/photo-card/photo-card";
-import { SearchService } from "../../../core/services/search.service";
+import { InifiteScroll } from "../../shared/directives/infinite-scroll";
+import { SearchService } from "../../core/services/search.service";
 import { debounceTime, Subscription } from "rxjs";
 import { takeUntilDestroyed, toObservable } from '@angular/core/rxjs-interop';
-import { SearchCriteria } from "../../../core/utils/photo-search";
-import { SearchBar } from "../../../shared/components/search-bar/search-bar";
+import { SearchCriteria } from "../../core/utils/photo-search";
+import { SearchBar } from "../../shared/components/search-bar/search-bar";
+import { FavoritesService } from "../../core/services/favorites.service";
+import { PhotoGrid } from "../../shared/components/photo-grid/photo-grid";
 
 @Component({
     selector: 'app-photos-page',
-    imports: [MatProgressSpinner, InifiteScroll, PhotoCard, SearchBar],
+    imports: [MatProgressSpinner, InifiteScroll, SearchBar, PhotoGrid],
     templateUrl: './photos-page.html',
     styleUrl: './photos-page.scss',
 })
 export class PhotosPage {
     private readonly photoService = inject(PhotoService);
     protected readonly search = inject(SearchService);
+    protected readonly favorites = inject(FavoritesService);
 
     protected readonly photos = signal<Photo[]>([]);
     protected readonly loading = signal(false);
@@ -45,10 +46,6 @@ export class PhotosPage {
             if (batch.length < DEFAULT_PAGE_SIZE) this.done.set(true);
             this.loading.set(false);
         });
-    }
-
-    onPhotoClick(photo: Photo): void {
-        console.log('Photo clicked:', photo);
     }
 
     private applyFilters(next: SearchCriteria): void {
