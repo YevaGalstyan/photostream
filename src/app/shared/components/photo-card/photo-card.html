@@ -1,0 +1,25 @@
+<mat-card class="card" appearance="outlined" role="button" tabindex="0"
+          [attr.aria-label]="photo().title"
+          (click)="photoClick.emit(photo())"
+          (keydown.enter)="photoClick.emit(photo())">
+  <img [src]="photo().url" [alt]="photo().title" loading="lazy" />
+
+  <div class="gradient reveal"></div>
+
+  <div class="overlay">
+    <div class="top">
+      <button mat-icon-button type="button" class="reveal"
+              aria-label="Download photo" (click)="onDownload($event)">
+        <mat-icon>download</mat-icon>
+      </button>
+      <button mat-icon-button type="button" class="heart"
+              [class.active]="favorite()" [class.reveal]="!favorite()"
+              [attr.aria-pressed]="favorite()"
+              [attr.aria-label]="favorite() ? 'Remove from favorites' : 'Add to favorites'"
+              (click)="onFavorite($event)">
+        <mat-icon>{{ favorite() ? 'favorite' : 'favorite_border' }}</mat-icon>
+      </button>
+    </div>
+    <span class="title reveal">{{ photo().title }}</span>
+  </div>
+</mat-card>

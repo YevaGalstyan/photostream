@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Photo } from "../models/photo.model";
 import { delay, Observable, of } from "rxjs";
-import { generateTitle } from "../../utils/fake-name-generator";
+import { generateTitle } from "../utils/fake-name-generator";
 
 const DEFAULT_PAGE_SIZE = 20;
 const MIN_DELAY_MS = 200;

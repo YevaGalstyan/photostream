@@ -25,7 +25,7 @@
 }
 
 .nav a {
-  border-radius: 999px; // pill shape
+  border-radius: 999px; 
 
   &.active {
     background: color-mix(in srgb, currentColor 14%, transparent);
@@ -33,7 +33,6 @@
   }
 }
 
-// On phones, hide the brand text and keep the buttons easy to tap
 @media (max-width: 480px) {
   .brand-name { display: none; }
 }

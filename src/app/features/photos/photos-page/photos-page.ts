@@ -4,10 +4,11 @@ import { Photo } from "../../../core/models/photo.model";
 import { MatProgressSpinner } from "@angular/material/progress-spinner";
 import { InifiteScroll } from "../../../shared/directives/infinite-scroll";
 import { MatCard, MatCardContent } from "@angular/material/card";
+import { PhotoCard } from "../../../shared/components/photo-card/photo-card";
 
 @Component({
  selector: 'app-photos-page',
-  imports: [MatProgressSpinner, InifiteScroll, MatCard, MatCardContent],
+  imports: [MatProgressSpinner, InifiteScroll, PhotoCard],
   templateUrl: './photos-page.html',
   styleUrl: './photos-page.scss',
 })
@@ -27,5 +28,9 @@ export class PhotosPage {
             this.photos.update((current) => [...current, ...batch]);
             this.loading.set(false);
         })
+    }
+
+    onPhotoClick(photo: Photo): void {
+        console.log('Photo clicked:', photo);
     }
 }

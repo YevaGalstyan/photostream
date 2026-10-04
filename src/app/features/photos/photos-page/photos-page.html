@@ -1,9 +1,7 @@
 <div class="grid">
     @for (photo of photos(); track photo.id) {
-    <mat-card class="card" appearance="outlined">
-        <img mat-card-image [src]="photo.url" [alt]="'Photo ' + photo.id" width="200" height="300" loading="lazy" />
-        <mat-card-content class="card-title">{{ photo.title }}</mat-card-content>
-    </mat-card>
+    <app-photo-card [photo]="photo" [favorite]="false" (photoClick)="onPhotoClick(photo)"
+        (favoriteToggle)="onPhotoClick(photo)" />
     }
 </div>
 
