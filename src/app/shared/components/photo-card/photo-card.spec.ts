@@ -20,6 +20,7 @@ describe('PhotoCard', () => {
     component.favoriteToggle.subscribe((event) => favoriteEvents.push(event));
     component.photoClick.subscribe((event) => photoEvents.push(event));
     fixture.componentRef.setInput('photo', photo);
+    fixture.componentRef.setInput('favorite', true);
     fixture.detectChanges();
 
     fixture.nativeElement.querySelector('.heart').click();
